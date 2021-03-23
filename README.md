@@ -1,2 +1,2 @@
-# skyline-mobile-demo
-Pretty mobile navigation demo
+# ginfinity_cross_platform
+Garten Infinity Cross platform application
