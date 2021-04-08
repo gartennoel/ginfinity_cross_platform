@@ -11,6 +11,7 @@ import OnboardingScreen from '../screens/Onboarding';
 import ProfileScreen from '../screens/Profile';
 import ProScreen from '../screens/Pro';
 import SettingsScreen from '../screens/Settings';
+import ChapterScreen from '../screens/Chapter';
 
 import CustomDrawerContent from './Menu';
 import { Icon, Header } from '../components';
@@ -91,12 +92,12 @@ function ComponentsStack(props) {
 function HomeStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="screen">
-      <Stack.Screen 
+      <Stack.Screen
         name="Home"
         component={HomeScreen}
         options={{
           header: ({ navigation, scene }) => (
-            <Header 
+            <Header
               search
               tabs
               title="Home"
@@ -106,7 +107,7 @@ function HomeStack(props) {
           )
         }}
       />
-      <Stack.Screen 
+      <Stack.Screen
         name="Pro"
         component={ProScreen}
         options={{
@@ -115,6 +116,20 @@ function HomeStack(props) {
           ),
           headerTransparent: true
         }}
+      />
+      <Stack.Screen
+        name="Chapter"
+        component={ChapterScreen}
+        options={({
+          route: {
+            params: {
+              chapter: { number, title },
+            },
+          },
+        }) => ({
+          title: number ? `Chapter ${number}: ${title}` : title,
+          gestureResponseDistance: { horizontal: 500 },
+        })}
       />
     </Stack.Navigator>
   );
@@ -196,8 +211,8 @@ function AppStack(props) {
         }}
       />
       <Drawer.Screen
-        name="Kids"
-        component={ProScreen}
+        name="Chapter"
+        component={ChapterScreen}
         options={{
           drawerIcon: ({ focused }) => (
             <Icon
@@ -369,7 +384,7 @@ const HomeStack = createStackNavigator({
   },
 },
 {
-  cardStyle: { 
+  cardStyle: {
     backgroundColor: '#EEEEEE', //this is the backgroundColor for the app
   },
   transitionConfig,

@@ -8,7 +8,7 @@ import materialTheme from "../constants/Theme";
 const proScreens = [
   "Woman",
   "Man",
-  "Kids",
+  "Chapter",
   "New Collection",
   "Sign In",
   "Sign Up"
@@ -46,7 +46,7 @@ class DrawerItem extends React.Component {
             color={focused ? "white" : materialTheme.COLORS.MUTED}
           />
         );
-      case "Kids":
+      case "Chapter":
         return (
           <Icon
             size={16}
