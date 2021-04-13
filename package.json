@@ -48,6 +48,7 @@
   "devDependencies": {
     "babel-preset-expo": "^8.2.1",
     "cross-env": "~7.0.0",
+    "eslint-config-rallycoding": "^3.2.0",
     "expo-cli": "~3.11.7",
     "jest-expo": "^37.0.0"
   },
