@@ -8,6 +8,7 @@ import Screens from '../navigation/Screens';
 
 // Before rendering any navigation stack
 import { enableScreens } from 'react-native-screens';
+
 enableScreens();
 
 // cache app images
@@ -25,9 +26,8 @@ function cacheImages(images) {
   return images.map(image => {
     if (typeof image === 'string') {
       return Image.prefetch(image);
-    } else {
-      return Asset.fromModule(image).downloadAsync();
     }
+      return Asset.fromModule(image).downloadAsync();
   });
 }
 
@@ -45,7 +45,7 @@ export default class Greeting extends React.Component {
           onFinish={this._handleFinishLoading}
         />
       );
-    } else {
+    }
       return (
         <GalioProvider theme={materialTheme}>
           <Block flex>
@@ -54,7 +54,6 @@ export default class Greeting extends React.Component {
           </Block>
         </GalioProvider>
       );
-    }
   }
 
   _loadResourcesAsync = async () => {

@@ -9,7 +9,7 @@ import materialTheme from '../constants/Theme';
 const { height, width } = Dimensions.get('window');
 const iPhoneX = () => Platform.OS === 'ios' && (height === 812 || width === 812 || height === 896 || width === 896);
 
-const ChatButton = ({isWhite, style, navigation}) => (
+const ChatButton = ({ isWhite, style, navigation }) => (
   <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('Pro')}>
     <Icon
       family="GalioExtra"
@@ -21,7 +21,7 @@ const ChatButton = ({isWhite, style, navigation}) => (
   </TouchableOpacity>
 );
 
-const BasketButton = ({isWhite, style, navigation}) => (
+const BasketButton = ({ isWhite, style, navigation }) => (
   <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('Pro')}>
     <Icon
       family="GalioExtra"
@@ -33,7 +33,7 @@ const BasketButton = ({isWhite, style, navigation}) => (
   </TouchableOpacity>
 );
 
-const SearchButton = ({isWhite, style, navigation}) => (
+const SearchButton = ({ isWhite, style, navigation }) => (
   <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('Pro')}>
     <Icon
       size={16}
@@ -57,7 +57,7 @@ class Header extends React.Component {
       return [
         <ChatButton key='chat-title' navigation={navigation} isWhite={white} />,
         <BasketButton key='basket-title' navigation={navigation} isWhite={white} />
-      ]
+      ];
     }
 
     switch (title) {
@@ -117,7 +117,7 @@ class Header extends React.Component {
         onFocus={() => navigation.navigate('Pro')}
         iconContent={<Icon size={16} color={theme.COLORS.MUTED} name="magnifying-glass" family="entypo" />}
       />
-    )
+    );
   }
 
   renderTabs = () => {
@@ -138,7 +138,7 @@ class Header extends React.Component {
           </Block>
         </Button>
       </Block>
-    )
+    );
   }
 
   renderHeader = () => {
@@ -149,7 +149,7 @@ class Header extends React.Component {
           {search ? this.renderSearch() : null}
           {tabs ? this.renderTabs() : null}
         </Block>
-      )
+      );
     }
     return null;
   }
@@ -157,7 +157,7 @@ class Header extends React.Component {
   render() {
     const { back, title, white, transparent, navigation } = this.props;
     // const { routeName } = navigation.state;
-    const noShadow = ["Search", "Categories", "Deals", "Pro", "Profile"].includes(title);
+    const noShadow = ['Search', 'Categories', 'Deals', 'Pro', 'Profile'].includes(title);
     const headerStyles = [
       !noShadow ? styles.shadow : null,
       transparent ? { backgroundColor: 'rgba(0,0,0,0)' } : null,
@@ -172,12 +172,12 @@ class Header extends React.Component {
           transparent={transparent}
           right={this.renderRight()}
           rightStyle={{ alignItems: 'center' }}
-          leftStyle={{ flex: 0.3, paddingTop: 2  }}
+          leftStyle={{ flex: 0.3, paddingTop: 2 }}
           leftIconName={(back ? 'chevron-left' : 'navicon')}
           leftIconColor={white ? theme.COLORS.WHITE : theme.COLORS.ICON}
           titleStyle={[
             styles.title,
-            {color: theme.COLORS[white ? 'WHITE' : 'ICON']},
+            { color: theme.COLORS[white ? 'WHITE' : 'ICON'] },
           ]}
           onLeftPress={this.handleLeftPress}
         />
@@ -253,4 +253,4 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     fontWeight: '300'
   },
-})
+});

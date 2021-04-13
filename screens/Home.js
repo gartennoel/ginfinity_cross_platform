@@ -1,16 +1,15 @@
 import React from 'react';
 import { StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { Button, Block, Text, Input, theme } from 'galio-framework';
-
+import products from '../constants/products';
 import { Icon, Product } from '../components/';
 
 const { width } = Dimensions.get('screen');
-import products from '../constants/products';
 
 export default class Home extends React.Component {
   renderSearch = () => {
     const { navigation } = this.props;
-    const iconCamera = <Icon size={16} color={theme.COLORS.MUTED} name="zoom-in" family="material" />
+    const iconCamera = <Icon size={16} color={theme.COLORS.MUTED} name="zoom-in" family="material" />;
 
     return (
       <Input
@@ -21,9 +20,9 @@ export default class Home extends React.Component {
         placeholder="What are you looking for?"
         onFocus={() => navigation.navigate('Pro')}
       />
-    )
+    );
   }
-  
+
   renderTabs = () => {
     const { navigation } = this.props;
 
@@ -42,14 +41,15 @@ export default class Home extends React.Component {
           </Block>
         </Button>
       </Block>
-    )
+    );
   }
 
   renderProducts = () => {
     return (
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.products}>
+        contentContainerStyle={styles.products}
+      >
         <Block flex>
           <Product product={products[0]} horizontal />
           <Block flex row>
@@ -60,7 +60,7 @@ export default class Home extends React.Component {
           <Product product={products[4]} full />
         </Block>
       </ScrollView>
-    )
+    );
   }
 
   render() {
@@ -74,7 +74,7 @@ export default class Home extends React.Component {
 
 const styles = StyleSheet.create({
   home: {
-    width: width,    
+    width,
   },
   search: {
     height: 48,

@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Dimensions, FlatList, Animated } from 'react-native';
 import { Block, theme } from 'galio-framework';
+import materialTheme from '../constants/Theme';
 
 const { width } = Dimensions.get('screen');
-import materialTheme from '../constants/Theme';
 
 const defaultMenu = [
   { id: 'popular', title: 'Popular', },
@@ -36,7 +36,7 @@ export default class MenuHorizontal extends React.Component {
       toValue: 1,
       duration: 300,
       // useNativeDriver: true, // color not supported
-    }).start()
+    }).start();
   }
 
   menuRef = React.createRef();
@@ -68,7 +68,7 @@ export default class MenuHorizontal extends React.Component {
       outputRange: [materialTheme.COLORS.MUTED, isActive ? materialTheme.COLORS.ACTIVE : materialTheme.COLORS.MUTED],
       extrapolate: 'clamp',
     });
-    
+
     const width = this.animatedValue.interpolate({
       inputRange: [0, 1],
       outputRange: ['0%', isActive ? '100%' : '0%'],
@@ -82,12 +82,13 @@ export default class MenuHorizontal extends React.Component {
             styles.menuTitle,
             { color: textColor }
           ]}
-          onPress={() => this.selectMenu(item.id)}>
+          onPress={() => this.selectMenu(item.id)}
+        >
           {item.title}
         </Animated.Text>
         <Animated.View style={{ height: 2, width, backgroundColor: materialTheme.COLORS.ACTIVE }} />
       </Block>
-    )
+    );
   }
 
   renderMenu = () => {
@@ -97,7 +98,7 @@ export default class MenuHorizontal extends React.Component {
       <FlatList
         {...props}
         data={data}
-        horizontal={true}
+        horizontal
         ref={this.menuRef}
         extraData={this.state}
         keyExtractor={(item) => item.id}
@@ -106,7 +107,7 @@ export default class MenuHorizontal extends React.Component {
         renderItem={({ item }) => this.renderItem(item)}
         contentContainerStyle={styles.menu}
       />
-    )
+    );
   }
 
   render() {
@@ -114,13 +115,13 @@ export default class MenuHorizontal extends React.Component {
       <Block style={[styles.container, styles.shadow]}>
         {this.renderMenu()}
       </Block>
-    )
+    );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    width: width,
+    width,
     backgroundColor: theme.COLORS.WHITE,
     zIndex: 2,
   },
