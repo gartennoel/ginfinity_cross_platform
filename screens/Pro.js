@@ -2,10 +2,10 @@ import React from 'react';
 import { ImageBackground, Image, StyleSheet, StatusBar, Dimensions, Platform } from 'react-native';
 import { Block, Button, Text, theme } from 'galio-framework';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Images, materialTheme } from '../constants/';
+import { HeaderHeight } from '../constants/utils';
 
 const { height, width } = Dimensions.get('screen');
-import { Images, materialTheme } from '../constants/';
-import { HeaderHeight } from "../constants/utils";
 
 export default class Pro extends React.Component {
   render() {
@@ -21,7 +21,8 @@ export default class Pro extends React.Component {
           >
           <LinearGradient
             style={styles.gradient}
-            colors={['rgba(0,0,0,0)', 'rgba(0,0,0,1)']} />
+            colors={['rgba(0,0,0,0)', 'rgba(0,0,0,1)']}
+          />
           </ImageBackground>
           <Block space="between" style={styles.padded}>
             <Block>
@@ -45,16 +46,19 @@ export default class Pro extends React.Component {
               <Block row style={{ marginTop: theme.SIZES.BASE * 1.5, marginBottom: theme.SIZES.BASE * 4 }}>
                 <Image
                   source={require('../assets/images/ios.png')}
-                  style={{ height: 38, width: 82, marginRight: theme.SIZES.BASE * 1.5 }} />
+                  style={{ height: 38, width: 82, marginRight: theme.SIZES.BASE * 1.5 }}
+                />
                 <Image
                   source={require('../assets/images/android.png')}
-                  style={{ height: 38, width: 140 }} />
+                  style={{ height: 38, width: 140 }}
+                />
               </Block>
               <Button
                 shadowless
                 style={styles.button}
                 color={materialTheme.COLORS.BUTTON_COLOR}
-                onPress={() => navigation.navigate('Home')}>
+                onPress={() => navigation.navigate('Home')}
+              >
                 GET PRO VERSION
               </Button>
             </Block>

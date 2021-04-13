@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import { Icon } from '../components';
 import { Images, materialTheme } from '../constants';
-import { HeaderHeight } from "../constants/utils";
+import { HeaderHeight } from '../constants/utils';
 
 const { width, height } = Dimensions.get('screen');
 const thumbMeasure = (width - 48 - 32) / 3;
@@ -16,9 +16,10 @@ export default class Profile extends React.Component {
       <Block flex style={styles.profile}>
         <Block flex>
           <ImageBackground
-            source={{uri: Images.Profile}}
+            source={{ uri: Images.Profile }}
             style={styles.profileContainer}
-            imageStyle={styles.profileImage}>
+            imageStyle={styles.profileImage}
+          >
             <Block flex style={styles.profileDetails}>
               <Block style={styles.profileTexts}>
                 <Text color="white" size={28} style={{ paddingBottom: 8 }}>Rachel Brown</Text>
@@ -35,7 +36,7 @@ export default class Profile extends React.Component {
                   <Block>
                     <Text color={theme.COLORS.MUTED} size={16}>
                       <Icon name="map-marker" family="font-awesome" color={theme.COLORS.MUTED} size={16} />
-                      {` `} Los Angeles, CA
+                      {' '} Los Angeles, CA
                       </Text>
                   </Block>
                 </Block>
@@ -48,15 +49,15 @@ export default class Profile extends React.Component {
           <ScrollView showsVerticalScrollIndicator={false}>
             <Block row space="between" style={{ padding: theme.SIZES.BASE, }}>
               <Block middle>
-                <Text bold size={12} style={{marginBottom: 8}}>36</Text>
+                <Text bold size={12} style={{ marginBottom: 8 }}>36</Text>
                 <Text muted size={12}>Orders</Text>
               </Block>
               <Block middle>
-                <Text bold size={12} style={{marginBottom: 8}}>5</Text>
+                <Text bold size={12} style={{ marginBottom: 8 }}>5</Text>
                 <Text muted size={12}>Bids & Offers</Text>
               </Block>
               <Block middle>
-                <Text bold size={12} style={{marginBottom: 8}}>2</Text>
+                <Text bold size={12} style={{ marginBottom: 8 }}>2</Text>
                 <Text muted size={12}>Messages</Text>
               </Block>
             </Block>
@@ -69,7 +70,7 @@ export default class Profile extends React.Component {
                 {Images.Viewed.map((img, imgIndex) => (
                   <Image
                     source={{ uri: img }}
-                    key={`viewed-${img}`}  
+                    key={`viewed-${img}`}
                     resizeMode="cover"
                     style={styles.thumb}
                   />
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
     height: 'auto',
   },
   profileContainer: {
-    width: width,
+    width,
     height: height / 2,
   },
   profileDetails: {

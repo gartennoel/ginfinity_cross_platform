@@ -14,13 +14,13 @@ export default class IconExtra extends React.Component {
   }
 
   async componentDidMount() {
-    await Font.loadAsync({ GalioExtra: GalioExtra });
+    await Font.loadAsync({ GalioExtra });
     this.setState({ fontLoaded: true });
   }
 
   render() {
     const { name, family, ...rest } = this.props;
-    
+
     if (name && family && this.state.fontLoaded) {
       if (family === 'GalioExtra') {
         return <IconGalioExtra name={name} family={family} {...rest} />;

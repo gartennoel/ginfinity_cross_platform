@@ -23,7 +23,7 @@ export default class Components extends React.Component {
   };
 
   toggleSwitch = switchId => this.setState({ [switchId]: !this.state[switchId] });
-  
+
   renderButtons = () => {
     return (
       <Block flex>
@@ -73,7 +73,8 @@ export default class Components extends React.Component {
                 shadowless
                 color={materialTheme.COLORS.DEFAULT}
                 textStyle={styles.optionsText}
-                style={[styles.optionsButton, styles.shadow]}>
+                style={[styles.optionsButton, styles.shadow]}
+              >
                 DELETE
               </Button>
             </Block>
@@ -83,33 +84,34 @@ export default class Components extends React.Component {
                 shadowless
                 color={materialTheme.COLORS.DEFAULT}
                 textStyle={styles.optionsText}
-                style={[styles.optionsButton, styles.shadow]}>
+                style={[styles.optionsButton, styles.shadow]}
+              >
                 SAVE FOR LATER
               </Button>
             </Block>
           </Block>
         </Block>
       </Block>
-    )
+    );
   }
-  
+
   renderText = () => {
     return (
       <Block flex style={styles.group}>
         <Text bold size={16} style={styles.title}>Typography</Text>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Text h1 style={{marginBottom: theme.SIZES.BASE / 2}}>Heading 1</Text>
-          <Text h2 style={{marginBottom: theme.SIZES.BASE / 2}}>Heading 2</Text>
-          <Text h3 style={{marginBottom: theme.SIZES.BASE / 2}}>Heading 3</Text>
-          <Text h4 style={{marginBottom: theme.SIZES.BASE / 2}}>Heading 4</Text>
-          <Text h5 style={{marginBottom: theme.SIZES.BASE / 2}}>Heading 5</Text>
-          <Text p style={{marginBottom: theme.SIZES.BASE / 2}}>Paragraph</Text>
+          <Text h1 style={{ marginBottom: theme.SIZES.BASE / 2 }}>Heading 1</Text>
+          <Text h2 style={{ marginBottom: theme.SIZES.BASE / 2 }}>Heading 2</Text>
+          <Text h3 style={{ marginBottom: theme.SIZES.BASE / 2 }}>Heading 3</Text>
+          <Text h4 style={{ marginBottom: theme.SIZES.BASE / 2 }}>Heading 4</Text>
+          <Text h5 style={{ marginBottom: theme.SIZES.BASE / 2 }}>Heading 5</Text>
+          <Text p style={{ marginBottom: theme.SIZES.BASE / 2 }}>Paragraph</Text>
           <Text muted>This is a muted paragraph.</Text>
         </Block>
       </Block>
-    )
+    );
   }
-  
+
   renderInputs = () => {
     return (
       <Block flex style={styles.group}>
@@ -124,9 +126,9 @@ export default class Components extends React.Component {
           />
         </Block>
       </Block>
-    )
+    );
   }
-  
+
   renderSwitches = () => {
     return (
       <Block flex style={styles.group}>
@@ -148,9 +150,9 @@ export default class Components extends React.Component {
           </Block>
         </Block>
       </Block>
-    )
+    );
   }
-  
+
   renderTableCell = () => {
     const { navigation } = this.props;
     return (
@@ -167,9 +169,9 @@ export default class Components extends React.Component {
           </Block>
         </Block>
       </Block>
-    )
+    );
   }
-  
+
   renderNavigation = () => {
     return (
       <Block flex style={styles.group}>
@@ -190,13 +192,14 @@ export default class Components extends React.Component {
               title="Title"
               tabTitleLeft="Option 1"
               tabTitleRight="Option 2"
-              navigation={this.props.navigation} />
+              navigation={this.props.navigation}
+            />
           </Block>
         </Block>
       </Block>
-    )
+    );
   }
-  
+
   renderSocial = () => {
     return (
       <Block flex style={styles.group}>
@@ -245,9 +248,9 @@ export default class Components extends React.Component {
           </Block>
         </Block>
       </Block>
-    )
+    );
   }
-  
+
   renderCards = () => {
     return (
       <Block flex style={styles.group}>
@@ -263,9 +266,10 @@ export default class Components extends React.Component {
             <Product product={products[4]} full />
             <Block flex card shadow style={styles.category}>
               <ImageBackground
-                source={{ uri: Images.Products['Accessories'] }}
+                source={{ uri: Images.Products.Accessories }}
                 style={[styles.imageBlock, { width: width - (theme.SIZES.BASE * 2), height: 252 }]}
-                imageStyle={{ width: width - (theme.SIZES.BASE * 2), height: 252 }}>
+                imageStyle={{ width: width - (theme.SIZES.BASE * 2), height: 252 }}
+              >
                 <Block style={styles.categoryTitle}>
                   <Text size={18} bold color={theme.COLORS.WHITE}>Accessories</Text>
                 </Block>
@@ -274,9 +278,9 @@ export default class Components extends React.Component {
           </Block>
         </Block>
       </Block>
-    )
+    );
   }
-  
+
   renderAlbum = () => {
     const { navigation } = this.props;
 
@@ -288,12 +292,13 @@ export default class Components extends React.Component {
             <Text
               size={12}
               color={theme.COLORS.PRIMARY}
-              onPress={() => navigation.navigate('Home')}>
+              onPress={() => navigation.navigate('Home')}
+            >
               View All
             </Text>
           </Block>
           <Block row space="between" style={{ marginTop: theme.SIZES.BASE, flexWrap: 'wrap' }} >
-            {Images.Viewed.map((img, index) => (
+            {Images.Viewed.map((img) => (
               <Block key={`viewed-${img}`} style={styles.shadow}>
                 <Image
                   resizeMode="cover"
@@ -305,7 +310,7 @@ export default class Components extends React.Component {
           </Block>
         </Block>
       </Block>
-    )
+    );
   }
 
   render() {
@@ -313,7 +318,8 @@ export default class Components extends React.Component {
       <Block flex center>
         <ScrollView
           style={styles.components}
-          showsVerticalScrollIndicator={false}>
+          showsVerticalScrollIndicator={false}
+        >
             {this.renderButtons()}
             {this.renderText()}
             {this.renderInputs()}
@@ -353,8 +359,8 @@ const styles = StyleSheet.create({
   optionsText: {
     fontSize: theme.SIZES.BASE * 0.75,
     color: '#4A4A4A',
-    fontWeight: "normal",
-    fontStyle: "normal",
+    fontWeight: 'normal',
+    fontStyle: 'normal',
     letterSpacing: -0.29,
   },
   optionsButton: {
@@ -368,9 +374,6 @@ const styles = StyleSheet.create({
   },
   inputDefault: {
     borderBottomColor: materialTheme.COLORS.PLACEHOLDER,
-  },
-  inputTheme: {
-    borderBottomColor: materialTheme.COLORS.PRIMARY,
   },
   inputTheme: {
     borderBottomColor: materialTheme.COLORS.PRIMARY,

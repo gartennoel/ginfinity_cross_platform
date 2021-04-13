@@ -1,11 +1,10 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, StatusBar, Dimensions, Platform } from 'react-native';
+import { ImageBackground, StyleSheet, StatusBar, Dimensions } from 'react-native';
 import { Block, Button, Text, theme } from 'galio-framework';
-
-const { height, width } = Dimensions.get('screen');
-
 import materialTheme from '../constants/Theme';
 import Images from '../constants/Images';
+
+const { height, width } = Dimensions.get('screen');
 
 export default class Onboarding extends React.Component {
   render() {
@@ -16,8 +15,8 @@ export default class Onboarding extends React.Component {
         <StatusBar barStyle="light-content" />
         <Block flex center>
           <ImageBackground
-            source={{  uri: Images.Onboarding }}
-            style={{ height: height, width: width, marginTop: '-55%', zIndex: 1 }}
+            source={{ uri: Images.Onboarding }}
+            style={{ height, width, marginTop: '-55%', zIndex: 1 }}
           />
         </Block>
         <Block flex space="between" style={styles.padded}>
@@ -38,7 +37,8 @@ export default class Onboarding extends React.Component {
                 shadowless
                 style={styles.button}
                 color={materialTheme.COLORS.BUTTON_COLOR}
-                onPress={() => navigation.navigate('App')}>
+                onPress={() => navigation.navigate('App')}
+              >
                 GET STARTED
               </Button>
             </Block>

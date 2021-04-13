@@ -20,7 +20,7 @@ function CustomDrawerContent({
     "Home",
     "Woman",
     "Man",
-    "Kids",
+    "Chapter",
     "New Collection",
     "Profile",
     "Settings",
