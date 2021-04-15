@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { persistCache } from 'apollo3-cache-persist';
 import { AppLoading } from 'expo';
 import Greeting from './screens/Greeting';
@@ -16,24 +16,24 @@ const client = new ApolloClient({
 });
 
 export default function App() {
-  const [loadingCache, setLoadingCache] = useState(true)
+  const [loadingCache, setLoadingCache] = useState(true);
 
   useEffect(() => {
     persistCache({
       cache,
       storage: AsyncStorage,
-    }).then(() => setLoadingCache(false))
-  }, [])
+    }).then(() => setLoadingCache(false));
+  }, []);
 
   if (loadingCache) {
-    return <AppLoading />
+    return <AppLoading />;
   }
 
   return (
     <ApolloProvider client={client}>
       <NavigationContainer>
-        <Greeting/>
+        <Greeting />
       </NavigationContainer>
     </ApolloProvider>
-  )
+  );
 }
