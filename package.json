@@ -1,6 +1,6 @@
 {
   "name": "ginfinity",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Garten Infinity Cross platform application",
   "main": "node_modules/expo/AppEntry.js",
   "private": true,

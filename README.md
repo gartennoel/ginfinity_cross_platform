@@ -7,7 +7,7 @@ Garten Infinity Cross platform application
 * **react-native**: sdk-39.0.3
 
 ## gInfinity Architecture
-"gInfinity" is a Monorepo for IOS, Android, and Web. At its core, ![Expo] (https://expo.io/) provides the foundation for all three platforms using ![react-native](https://reactnative.dev/). At a high level the plan is to use ![this](https://drive.google.com/file/d/1oBDGdjBPnhF1N-CbLEczyo1A9CwDletl/view?usp=sharing); living document found [here](https://docs.google.com/drawings/d/1Xz_D8CQ3Zj5QksqQb7ZWr8uBEy4HQh-2QqigRxrBVX8/edit). The latest ERD can be found [here](https://drive.google.com/file/d/1u5DIzY2n9ILm1fjJzMGsX9rfIkbDow68/view?usp=sharing)
+"gInfinity" is a Monorepo for IOS, Android, and Web. At its core, ![Expo](https://expo.io/) provides the foundation for all three platforms using ![react-native](https://reactnative.dev/). At a high level the plan is to use ![this](https://drive.google.com/file/d/1oBDGdjBPnhF1N-CbLEczyo1A9CwDletl/view?usp=sharing) living document found [here](https://docs.google.com/drawings/d/1Xz_D8CQ3Zj5QksqQb7ZWr8uBEy4HQh-2QqigRxrBVX8/edit). The latest ERD can be found [here](https://drive.google.com/file/d/1u5DIzY2n9ILm1fjJzMGsX9rfIkbDow68/view?usp=sharing)
 
 ## Up and Running
 Assuming you have installed node & npm per the above certified versions
